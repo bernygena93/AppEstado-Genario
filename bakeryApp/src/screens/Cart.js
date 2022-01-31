@@ -1,21 +1,22 @@
 import {View, Text, FlatList, TouchableOpacity} from 'react-native';
 import React, {useEffect, useState} from 'react';
-import {CARTS} from '../constants/cart';
+import {useSelector} from 'react-redux';
 import CartItem from '../components/CartItem';
 import {styles} from './styles/cartStyles';
 
 const Cart = () => {
   const [total, setTotal] = useState(0);
-  const [carts, setCarts] = useState(CARTS);
+  const cart = useSelector(state => state.cart.cart);
+
   const handleDelete = id => {
-    setCarts(carts.filter(product => product.id !== id));
+    console.warn(id);
   };
 
   useEffect(() => {
-    carts.forEach(product =>
+    cart.forEach(product =>
       setTotal(prev => prev + product.price * product.quantity),
     );
-  }, [carts]);
+  }, [cart]);
 
   return (
     <View style={styles.container}>
@@ -29,7 +30,7 @@ const Cart = () => {
         </TouchableOpacity>
       </View>
       <FlatList
-        data={carts}
+        data={cart}
         keyExtractor={item => item.id}
         renderItem={data => (
           <CartItem item={data.item} onDelete={handleDelete} />

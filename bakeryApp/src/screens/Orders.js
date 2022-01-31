@@ -1,13 +1,14 @@
 import React from 'react';
 import {View, FlatList} from 'react-native';
-import {ORDERS} from '../constants/orders';
+import {useSelector} from 'react-redux';
 import OrderItem from '../components/OrderItem';
 import {styles} from './styles/cartStyles';
 
 const Orders = () => {
-  const orders = ORDERS;
+  const orders = useSelector(state => state.orders.order);
+
   const handleDelete = id => {
-    setCarts(orders.filter(product => product.id !== id));
+    console.warn(id);
   };
 
   return (
