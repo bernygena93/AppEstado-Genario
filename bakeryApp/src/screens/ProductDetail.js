@@ -1,16 +1,16 @@
-import {View, Text} from 'react-native';
-import React, {useEffect} from 'react';
+import {View, Text, Button} from 'react-native';
+import React from 'react';
 import {styles} from './styles/productDetailStyles';
 import {useSelector, useDispatch} from 'react-redux';
-import {selectBread} from '../store/actions/bread.action';
+import {addItem} from '../store/actions/cart.action';
 
 const ProductDetail = () => {
   const product = useSelector(state => state.breads.selected);
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    dispatch(selectBread(product.id));
-  }, []);
+  const handlerItem = () => {
+    dispatch(addItem(product));
+  };
 
   return (
     <View style={styles.container}>
@@ -18,6 +18,7 @@ const ProductDetail = () => {
       <Text style={styles.text}>Descripción: {product.description}</Text>
       <Text style={styles.text}>Peso: {product.weight}</Text>
       <Text style={styles.text}>Precio: $ {product.price}</Text>
+      <Button title="Agregar al carrito" onPress={handlerItem} />
     </View>
   );
 };

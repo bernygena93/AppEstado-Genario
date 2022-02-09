@@ -1753,6 +1753,13 @@
   "resolved" "https://registry.npmjs.org/atob/-/atob-2.1.2.tgz"
   "version" "2.1.2"
 
+"axios@^0.25.0":
+  "integrity" "sha512-cD8FOb0tRH3uuEe6+evtAbgJtfxr7ly3fQjYcMcuPlgkwVS9xboaVIpcDV+cYQe+yGykgwZCs1pzjntcGa6l5g=="
+  "resolved" "https://registry.npmjs.org/axios/-/axios-0.25.0.tgz"
+  "version" "0.25.0"
+  dependencies:
+    "follow-redirects" "^1.14.7"
+
 "babel-core@^7.0.0-bridge.0":
   "integrity" "sha512-poPX9mZH/5CSanm50Q+1toVci6pv5KSRv/5TWCwtzQS5XEwn40BcCrgIeMFWP9CKKIniKXNxoIOnOq4VVlGXhg=="
   "resolved" "https://registry.npmjs.org/babel-core/-/babel-core-7.0.0-bridge.0.tgz"
@@ -2579,6 +2586,11 @@
   dependencies:
     "webidl-conversions" "^5.0.0"
 
+"dotenv@^10.0.0":
+  "integrity" "sha512-rlBi9d8jpv9Sf1klPjNfFAuWDjKLwTIJJ/VxtoTwIR6hnZxcEOQCZg2oIL3MWBYw5GpUDKOEnND7LXTbIpQ03Q=="
+  "resolved" "https://registry.npmjs.org/dotenv/-/dotenv-10.0.0.tgz"
+  "version" "10.0.0"
+
 "ee-first@1.1.1":
   "integrity" "sha1-WQxhFWsK4vTwJVcyoViyZrxWsh0="
   "resolved" "https://registry.npmjs.org/ee-first/-/ee-first-1.1.1.tgz"
@@ -3150,6 +3162,11 @@
   "integrity" "sha512-X1DFb6wxXpZLLqM9NX0Wm+4xoN6xAyJn8OwuiHsV0JJvLfD18Z+wbgJ1lM7ykTVINdu8v7Mu0gIzWMvnhKWBkA=="
   "resolved" "https://registry.npmjs.org/flow-parser/-/flow-parser-0.169.0.tgz"
   "version" "0.169.0"
+
+"follow-redirects@^1.14.7":
+  "integrity" "sha512-1x0S9UVJHsQprFcEC/qnNzBLcIxsjAV905f/UkQxbclCsoTWlacCNOpQa/anodLl2uaEKFhfWOvM2Qg77+15zA=="
+  "resolved" "https://registry.npmjs.org/follow-redirects/-/follow-redirects-1.14.8.tgz"
+  "version" "1.14.8"
 
 "for-in@^1.0.2":
   "integrity" "sha1-gQaNKVqBQuwKxybG4iAMMPttXoA="
@@ -5687,6 +5704,13 @@
     "jscodeshift" "^0.11.0"
     "nullthrows" "^1.1.1"
 
+"react-native-dotenv@^3.3.1":
+  "integrity" "sha512-gAKXout1XCwCqJ3QPGoQAF2eRzOHgOnwg3x19z+ssow8bDIksJeKBqvoHDyGziVilAIP1J0bEC9Jf+VF8nFang=="
+  "resolved" "https://registry.npmjs.org/react-native-dotenv/-/react-native-dotenv-3.3.1.tgz"
+  "version" "3.3.1"
+  dependencies:
+    "dotenv" "^10.0.0"
+
 "react-native-safe-area-context@^3.3.2", "react-native-safe-area-context@>= 3.0.0":
   "integrity" "sha512-yOwiiPJ1rk+/nfK13eafbpW6sKW0jOnsRem2C1LPJjM3tfTof6hlvV5eWHATye3XOpu2cJ7N+HdkUvUDGwFD2Q=="
   "resolved" "https://registry.npmjs.org/react-native-safe-area-context/-/react-native-safe-area-context-3.3.2.tgz"
@@ -5821,7 +5845,12 @@
     "source-map" "~0.6.1"
     "tslib" "^2.0.1"
 
-"redux@^4.0.0", "redux@^4.1.2":
+"redux-thunk@^2.4.1":
+  "integrity" "sha512-OOYGNY5Jy2TWvTL1KgAlVy6dcx3siPJ1wTq741EPyUKfn6W6nChdICjZwCd0p8AZBs5kWpZlbkXW2nE/zjUa+Q=="
+  "resolved" "https://registry.npmjs.org/redux-thunk/-/redux-thunk-2.4.1.tgz"
+  "version" "2.4.1"
+
+"redux@^4", "redux@^4.0.0", "redux@^4.1.2":
   "integrity" "sha512-SH8PglcebESbd/shgf6mii6EIoRM0zrQyjcuQ+ojmfxjTtE0z9Y8pa62iA/OJ58qjP6j27uyW4kUF4jl/jd6sw=="
   "resolved" "https://registry.npmjs.org/redux/-/redux-4.1.2.tgz"
   "version" "4.1.2"

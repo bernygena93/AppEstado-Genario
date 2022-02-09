@@ -1,34 +1,25 @@
-import {View, Text, FlatList, TouchableOpacity} from 'react-native';
-import React, {useEffect, useState} from 'react';
-import {useSelector} from 'react-redux';
+import {View, Text, FlatList, TouchableOpacity, Button} from 'react-native';
+import React from 'react';
+import {useDispatch, useSelector} from 'react-redux';
 import CartItem from '../components/CartItem';
 import {styles} from './styles/cartStyles';
+import {confirmItems, deleteItem} from '../store/actions/cart.action';
 
-const Cart = () => {
-  const [total, setTotal] = useState(0);
-  const cart = useSelector(state => state.cart.cart);
+const Cart = ({navigation}) => {
+  const dispatch = useDispatch();
+  const cart = useSelector(state => state.carts.items);
+  const total = useSelector(state => state.carts.total);
 
   const handleDelete = id => {
-    console.warn(id);
+    dispatch(deleteItem(id));
   };
 
-  useEffect(() => {
-    cart.forEach(product =>
-      setTotal(prev => prev + product.price * product.quantity),
-    );
-  }, [cart]);
+  const handleConfirm = () => {
+    dispatch(confirmItems(cart, total));
+  };
 
   return (
     <View style={styles.container}>
-      <View style={styles.header}>
-        <View style={styles.info}>
-          <Text style={styles.title}>Total:</Text>
-          <Text style={styles.title}>$ {total} </Text>
-        </View>
-        <TouchableOpacity style={styles.button}>
-          <Text style={styles.textButton}>Pagar</Text>
-        </TouchableOpacity>
-      </View>
       <FlatList
         data={cart}
         keyExtractor={item => item.id}
@@ -36,6 +27,10 @@ const Cart = () => {
           <CartItem item={data.item} onDelete={handleDelete} />
         )}
       />
+      <Text style={styles.title}>Total: $ {total} </Text>
+      <TouchableOpacity style={styles.button}>
+        <Text style={styles.textButton}>Pagar</Text>
+      </TouchableOpacity>
     </View>
   );
 };

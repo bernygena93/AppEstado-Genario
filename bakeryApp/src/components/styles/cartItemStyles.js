@@ -7,7 +7,7 @@ export const styles = StyleSheet.create({
     height: 75,
     justifyContent: 'space-between',
     borderBottomWidth: 1,
-    borderBottomColor: COLOR.green,
+    borderBottomColor: COLOR.beige,
   },
   data: {
     flexDirection: 'row',

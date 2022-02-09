@@ -7,6 +7,7 @@ export const styles = StyleSheet.create({
     width: '100%',
     alignItems: 'center',
     backgroundColor: 'white',
+    marginBottom: 120,
   },
   header: {
     position: 'absolute',
@@ -27,9 +28,15 @@ export const styles = StyleSheet.create({
     justifyContent: 'space-between',
   },
   title: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: '100%',
     color: COLOR.greenishGray,
     fontSize: 24,
     fontWeight: '600',
+    borderTopWidth: 1,
+    borderColor: COLOR.beige,
+    paddingVertical: 20,
   },
   button: {
     justifyContent: 'center',

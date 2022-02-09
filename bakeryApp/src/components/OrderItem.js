@@ -17,7 +17,7 @@ const OrderItem = ({item, onDelete}) => {
       </View>
       <View style={styles.data}>
         <View>
-          <Text style={styles.textData}>Precio: ${item.total}</Text>
+          <Text style={styles.textData}>${item.total}</Text>
         </View>
         <TouchableOpacity onPress={() => onDelete(item.id)}>
           <Ionicons name="trash-outline" size={24} color={COLOR.green} />

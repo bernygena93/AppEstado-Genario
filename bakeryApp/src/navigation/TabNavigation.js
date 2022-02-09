@@ -6,11 +6,11 @@ import CartNavigation from './cart/CartNavigation';
 import {styles} from './styles/tabStyles';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import {COLOR} from '../constants/colors';
-import {CARTS} from '../constants/cart';
+import {useSelector} from 'react-redux';
 
 const BottomTabs = createBottomTabNavigator();
-
 const TabNavigation = () => {
+  const carts = useSelector(state => state.carts.items);
   return (
     <BottomTabs.Navigator
       initialRouteName="ShopTab"
@@ -48,7 +48,7 @@ const TabNavigation = () => {
               />
               {!focused && (
                 <View style={styles.carts}>
-                  <Text style={{color: 'white'}}>{CARTS.length}</Text>
+                  <Text style={{color: 'white'}}>{carts.length}</Text>
                 </View>
               )}
               <Text style={{color: focused && COLOR.pink}}>Cart</Text>
